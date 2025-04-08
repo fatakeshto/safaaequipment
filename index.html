@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Safaa Equipments - Premium construction equipment rentals. Excavators, loaders, cranes and more. Coming soon!">
+  <title>Under Construction | Safaa Equipments - Construction Equipment Rental</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0056b3; /* Professional blue */
+      --secondary: #ff8c00; /* Vibrant orange */
+      --light: #f8f9fa;
+      --dark: #212529;
+      --success: #28a745;
+      --error: #dc3545;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: url('image/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 20px;
+      color: var(--light);
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      width: 100%;
+      padding: 2.5rem;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      text-align: center;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      max-width: 280px;
+      margin: 0 auto 2rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--secondary);
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .feature-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .feature-item i {
+      color: var(--secondary);
+    }
+
+    .subscribe-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .form-group {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .subscribe-form input[type="email"] {
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      border: none;
+      font-size: 1rem;
+      width: 100%;
+      outline: none;
+      background: rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+    }
+
+    .subscribe-form input[type="email"]:focus {
+      box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.3);
+      background: white;
+    }
+
+    .subscribe-btn {
+      background: linear-gradient(135deg, var(--primary), #003366);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .subscribe-btn:hover {
+      background: linear-gradient(135deg, #004494, #002244);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    #subscription-message {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      min-height: 20px;
+    }
+
+    .success {
+      color: var(--success);
+    }
+
+    .error {
+      color: var(--error);
+    }
+
+    .contact {
+      margin-top: 2.5rem;
+      font-size: 1rem;
+    }
+
+    .contact a {
+      color: var(--secondary);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 600;
+    }
+
+    .contact a:hover {
+      color: #ff9e00;
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-links a {
+      color: var(--light);
+      font-size: 1.5rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 2rem 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+      
+      .features {
+        gap: 0.8rem;
+      }
+      
+      .feature-item {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="image/logo.png" alt="Safaa Equipments Logo" class="logo">
+    <h1>Coming Soon!</h1>
+    <p>We're building an exceptional platform to serve all your construction equipment rental needs. Stay tuned for our launch!</p>
+    
+    <!-- Features -->
+    <div class="features">
+      <div class="feature-item">
+        <i class="fas fa-check-circle"></i>
+        <span>Premium Equipment</span>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-check-circle"></i>
+        <span>Competitive Rates</span>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-check-circle"></i>
+        <span>24/7 Support</span>
+      </div>
+    </div>
+
+    <!-- Email subscription form -->
+    <form class="subscribe-form" id="subscriptionForm">
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+      </div>
+      <button type="submit" class="subscribe-btn">
+        <i class="fas fa-bell"></i> Notify Me When We Launch
+      </button>
+      <div id="subscription-message"></div>
+    </form>
+
+    <div class="contact">
+      <p>Need equipment now? Contact us:</p>
+      <p>
+        <a href="mailto:info@safaaequipments.com"><i class="fas fa-envelope"></i> info@safaaequipments.com</a><br>
+        <a href="tel:+8801919266256"><i class="fas fa-phone"></i> +880 1919 266 256</a>
+      </p>
+      
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Form submission handler
+    document.getElementById('subscriptionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('email');
+      const message = document.getElementById('subscription-message');
+      
+      if (emailInput.checkValidity()) {
+        // In a real implementation, you would send this to your backend
+        console.log('Subscribed email:', emailInput.value);
+        
+        // Show success message
+        message.textContent = 'Thank you! We\'ll notify you when we launch.';
+        message.className = 'success';
+        
+        // Reset form
+        emailInput.value = '';
+        
+        // You would typically send the data to your server here
+        // Example using fetch():
+        // fetch('/api/subscribe', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify({ email: emailInput.value })
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //   message.textContent = data.message;
+        //   message.className = 'success';
+        //   emailInput.value = '';
+        // })
+        // .catch(error => {
+        //   message.textContent = 'Subscription failed. Please try again.';
+        //   message.className = 'error';
+        // });
+      } else {
+        message.textContent = 'Please enter a valid email address.';
+        message.className = 'error';
+      }
+    });
+  </script>
+</body>
+</html>
